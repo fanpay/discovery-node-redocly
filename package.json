@@ -1,0 +1,22 @@
+{
+  "name": "discovery-node-redocly",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "export:openapi": "node scripts/export-openapi.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1",
+    "js-yaml": "^4.2.0",
+    "swagger-jsdoc": "^6.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

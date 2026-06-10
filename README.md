@@ -1,6 +1,6 @@
 # Discovery Node + Redocly
 
-A sample Node.js REST API with three resources (products, orders, users) and automatic OpenAPI spec export for Redocly.
+A sample Node.js REST API with four resources (products, orders, users, reviews) and automatic OpenAPI spec export for Redocly.
 
 ## Requirements
 
@@ -37,6 +37,10 @@ Server starts at **http://localhost:3000**
 | GET | `/users` | List users |
 | GET | `/users/:id` | Get user by ID |
 | POST | `/users` | Create a user |
+| GET | `/reviews` | List reviews (optional `?productId=` / `?userId=`) |
+| GET | `/reviews/:id` | Get review by ID |
+| POST | `/reviews` | Submit a review |
+| DELETE | `/reviews/:id` | Delete a review |
 
 ### Quick smoke test with curl
 
@@ -70,6 +74,17 @@ curl -X POST http://localhost:3000/orders \
 curl -X POST http://localhost:3000/users \
   -H "Content-Type: application/json" \
   -d '{"name":"Carlos López","email":"carlos@example.com"}'
+
+# List reviews for a product
+curl "http://localhost:3000/reviews?productId=1"
+
+# Submit a review
+curl -X POST http://localhost:3000/reviews \
+  -H "Content-Type: application/json" \
+  -d '{"productId":1,"userId":2,"rating":5,"comment":"Excellent!"}'
+
+# Delete a review
+curl -X DELETE http://localhost:3000/reviews/1
 ```
 
 ## Export OpenAPI spec

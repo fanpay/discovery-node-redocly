@@ -5,7 +5,7 @@ const options = {
     openapi: '3.0.3',
     info: {
       title: 'Discovery Store API',
-      version: '1.0.0',
+      version: '1.1.0',
       description: 'A sample REST API exposing products, orders, and users resources.',
       contact: {
         name: 'API Support',
@@ -98,6 +98,27 @@ const options = {
             role: { type: 'string', enum: ['admin', 'customer'], example: 'customer' },
           },
         },
+        Review: {
+          type: 'object',
+          properties: {
+            id: { type: 'integer', example: 1 },
+            productId: { type: 'integer', example: 1 },
+            userId: { type: 'integer', example: 2 },
+            rating: { type: 'integer', minimum: 1, maximum: 5, example: 4 },
+            comment: { type: 'string', example: 'Great product!' },
+            createdAt: { type: 'string', format: 'date-time', example: '2026-01-10T09:00:00Z' },
+          },
+        },
+        ReviewInput: {
+          type: 'object',
+          required: ['productId', 'userId', 'rating'],
+          properties: {
+            productId: { type: 'integer', example: 1 },
+            userId: { type: 'integer', example: 2 },
+            rating: { type: 'integer', minimum: 1, maximum: 5, example: 4 },
+            comment: { type: 'string', example: 'Great product!' },
+          },
+        },
         Error: {
           type: 'object',
           properties: {
@@ -108,6 +129,7 @@ const options = {
     },
   },
   apis: ['./src/routes/*.js'],
+  // routes are scanned in alphabetical order; swagger-jsdoc merges all @openapi blocks
 };
 
 module.exports = swaggerJsdoc(options);

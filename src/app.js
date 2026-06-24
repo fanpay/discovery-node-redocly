@@ -33,8 +33,8 @@ app.get('/health', (req, res) => res.json({ status: 'ok' }));
  *                   example: 2.0.0
  *                 message:
  *                   type: string
- *                   example: Discovery Store API is running
+ *                   example: Discovery Store - Node API is running
  */
-app.get('/status', (req, res) => res.json({ status: 'ok', version: '2.0.0', message: 'Discovery Store API is running' }));
+app.get('/status', (req, res) => res.json({ status: 'ok', version: '2.0.0', message: 'Discovery Store - Node API is running' }));
 
 module.exports = app;

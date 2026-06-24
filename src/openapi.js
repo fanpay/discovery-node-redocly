@@ -4,7 +4,7 @@ const options = {
   definition: {
     openapi: '3.0.3',
     info: {
-      title: 'Discovery Store API',
+      title: 'Discovery Store - Node API',
       version: '2.0.0',
       description: 'A sample REST API exposing products, orders, and users resources.',
       contact: {

@@ -5,7 +5,7 @@ const options = {
     openapi: '3.0.3',
     info: {
       title: 'Discovery Store API',
-      version: '1.1.0',
+      version: '2.0.0',
       description: 'A sample REST API exposing products, orders, and users resources.',
       contact: {
         name: 'API Support',
@@ -128,7 +128,7 @@ const options = {
       },
     },
   },
-  apis: ['./src/routes/*.js'],
+  apis: ['./src/app.js', './src/routes/*.js'],
   // routes are scanned in alphabetical order; swagger-jsdoc merges all @openapi blocks
 };
 

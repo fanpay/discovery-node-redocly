@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Discovery Store API
-  version: 1.1.0
+  version: 2.0.0
   description: A sample REST API exposing products, orders, and users resources.
   contact:
     name: API Support
@@ -203,6 +203,28 @@ components:
           type: string
           example: Resource not found
 paths:
+  /status:
+    get:
+      summary: API status and version info
+      tags:
+        - General
+      responses:
+        '200':
+          description: Current API status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  version:
+                    type: string
+                    example: 2.0.0
+                  message:
+                    type: string
+                    example: Discovery Store API is running
   /users:
     get:
       summary: List all users

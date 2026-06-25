@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Discovery Store - Node API
+  title: Discovery Store - Node API - V4.0
   version: 2.0.0
   description: A sample REST API exposing products, orders, and users resources. This will be a test for Redocly Sync
   contact:
